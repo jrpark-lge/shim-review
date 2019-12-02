@@ -15,4 +15,5 @@ WORKDIR /build
 RUN hexdump -Cv shim-review/shimx64.efi > orig.hexdump
 RUN hexdump -Cv shim/shimx64.efi > built.hexdump
 RUN diff -u orig.hexdump built.hexdump
-
+RUN sha256sum shim-review/shimx64.efi
+RUN sha256sum shim/shimx64.efi
